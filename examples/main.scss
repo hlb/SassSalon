@@ -1,0 +1,31 @@
+/* Example: Vertical Centering in CSS
+   http://www.jakpsatweb.cz/css/css-vertical-center-solution.html
+   <ul class="entries">
+     <li><a><span>...</span></a></li>
+  </ul>
+*/
+
+.entries {
+    li {
+        display: table;
+        height: 50px;
+        overflow: hidden;
+        a {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+        }
+        // IE hacks
+        .ie6 &, .ie7 & {
+            position: relative;
+            a {
+                position: absolute;
+                top: 50%;
+                span {
+                    position: relative;
+                    top: -50%;
+                }
+            }
+        }
+    }
+}
